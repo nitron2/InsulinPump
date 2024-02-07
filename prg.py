@@ -1,4 +1,3 @@
-
 # prg is the main part of the software that runs in a loop to simulate everything.
 
 import PySimpleGUI as psg
@@ -14,6 +13,7 @@ def update_auto_run_text(auto_run, window):
     else:
         window["AutoRun"].update("AUTORUN: NO")
 
+
 # Update the text for the alarm indicator
 def update_alarm_text(alarm, window):
     if alarm:
@@ -21,11 +21,13 @@ def update_alarm_text(alarm, window):
     else:
         window["Alarm"].update("ALARM: DISABLED")
 
+
 # Logic for making program automatically run or not.
 def get_timeout_based_on_auto_run(auto_run):
     if auto_run:
         return settings.TIME_BETWEEN_FRAMES_MS
     return None
+
 
 # Update all gui states at once.
 def update_gui(window, blood):
@@ -36,6 +38,7 @@ def update_gui(window, blood):
     window["Battery"].update(str(round((pump.battery_voltage / settings.BATTERY_CAPACITY_MAX_VOLTAGE) * 100)) + "%")
     update_auto_run_text(auto_run, window)
     update_alarm_text(alarm, window)
+
 
 # Main loop to simulate everything
 if __name__ == "__main__":
@@ -55,7 +58,7 @@ if __name__ == "__main__":
                psg.Button(button_text="ADVANCE"), psg.Button(key="AutoRun", button_text="AUTORUN"),
                psg.Button(key="Alarm", button_text="ALARM")]]
     # UI pop up here
-    window = psg.Window('Window Title', layout)
+    window = psg.Window('Insulin Pump Simulation', layout)
     pump = InsulinPump()
     blood = Blood()
     auto_run = settings.AUTO_ADVANCE_ANIMATION
@@ -65,7 +68,8 @@ if __name__ == "__main__":
     # Main loop to simulate the problem
     # All button logic is below:
     while True:
-        event, values = window.read(timeout=timeout) # ms to wait until the Read will return IF no other GUI events happen first If timout is None, then don't automatically run
+        event, values = window.read(
+            timeout=timeout)  # ms to wait until the Read will return IF no other GUI events happen first If timout is None, then don't automatically run
         if event == psg.WIN_CLOSED:  # if user closes window or clicks cancel
             break
         if event == 'On':

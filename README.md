@@ -2,7 +2,7 @@
 Total Hours: 14.5
 7 testing
 5 UI issues
-2.5 Logic
+2.5 Logicd
 
 ## Goals:
 1. Simulates blood glucose of a diabetic person with insulin injection. 
@@ -21,3 +21,5 @@ Total Hours: 14.5
 
 ## Non-goals:
 1. [ ] Perfectly staying between the low and high boundaries for blood glucose.
+2. [ ] OOP elements simulate environment with the highest level of fidelity. 
+3. (In real life, the injector would compute blood glucose acceleration, instead of the patient's blood reporting it to the sensors).
