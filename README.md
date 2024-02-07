@@ -22,4 +22,4 @@ Total Hours: 14.5
 ## Non-goals:
 1. [ ] Perfectly staying between the low and high boundaries for blood glucose.
 2. [ ] OOP elements simulate environment with the highest level of fidelity. 
-3. (In real life, the injector would compute blood glucose acceleration, instead of the patient's blood reporting it to the sensors).
+(In real life, the injector would compute blood glucose acceleration, instead of the patient's blood reporting it to the sensors).
